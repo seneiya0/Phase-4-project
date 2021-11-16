@@ -2,6 +2,10 @@
   display: block;
 }
 
+body {
+  background-color: rgba(132, 23, 211, 0.57);
+}
+
 .like-button{
   border-color: transparent;
   background-color: transparent;

@@ -1,0 +1,10 @@
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+#navbar{
+    float: left;
+    width: 100vw;
+    padding: 5px;
+}

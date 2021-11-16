@@ -16,7 +16,7 @@ function App({showSearch}) {
   const filteredList = posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
     return (
-      <div>
+      <div id="background">
         <NavBar showSearch={showSearch} setSearch= {setSearch} />
         <PostContainer posts={filteredList} />
       </div>
