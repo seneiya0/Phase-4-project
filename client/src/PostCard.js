@@ -18,8 +18,6 @@ function handleLike(){
         .then(json => setLikes(json.likes))
 }
 
-console.log(post.tags)
-
 const tags = post.tags.map((tag) => <span className="tags" key={tag.id}> #{tag.name} </span>)
 
     return (
