@@ -1,3 +1,7 @@
+.App{
+  display: block;
+}
+
 .like-button{
   border-color: transparent;
   background-color: transparent;
@@ -15,13 +19,20 @@
   flex-direction: row;
   flex-wrap: wrap;
   height: auto;
-
+  float: left;
 }
 
 .post-card{
-  padding: 5%;
+  padding: 3%;
   background-color: rgb(151, 151, 151);
   margin: 20px;
   width:  200px;
+
 }
+
+.tags{
+  padding: 2%;
+}
+
+
 

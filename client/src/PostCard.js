@@ -18,6 +18,9 @@ function handleLike(){
         .then(json => setLikes(json.likes))
 }
 
+console.log(post.tags)
+
+const tags = post.tags.map((tag) => <span className="tags" key={tag.id}> #{tag.name} </span>)
 
     return (
         <div className='post-card'>
@@ -25,6 +28,9 @@ function handleLike(){
             <h3> {post.user.username} </h3>
             <img style={{width: '200px'}} src={post.image}  />
             <p className='post-body'>{post.body}</p>
+            <div>
+                {tags}
+            </div>
             <button className="like-button" onClick={handleLike}>❤️</button> {likes}
         </div>
     );
