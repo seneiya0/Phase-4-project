@@ -1,0 +1,27 @@
+.like-button{
+  border-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 10ms;
+}
+
+.like-button:hover{
+  transform: scale(110%);
+}
+
+.posts {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+
+}
+
+.post-card{
+  padding: 5%;
+  background-color: rgb(151, 151, 151);
+  margin: 20px;
+  width:  200px;
+}
+

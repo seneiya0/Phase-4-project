@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function PostCard({post}) {
-    return (
-       <div>
-           <h1>{post.title}</h1>
-           <img src={post.image} alt="image" />
-           <h3>{post.body}</h3>
-           <button>❤️ {post.likes}</button>
 
-       </div>
+    const[likes, setLikes] = useState(`${post.likes}`)
+
+function handleLike(){
+    fetch(`/posts/${post.id}/like`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+        completed: true
+        }),
+        headers: {
+        "Content-type": "application/json; charset=UTF-8"
+        }
+        })
+        .then(response => response.json())
+        .then(json => setLikes(json.likes))
+}
+
+
+    return (
+        <div className='post-card'>
+            <h1>{post.title}</h1>
+            <h3> {post.user.username} </h3>
+            <img style={{width: '200px'}} src={post.image}  />
+            <p className='post-body'>{post.body}</p>
+            <button className="like-button" onClick={handleLike}>❤️</button> {likes}
+        </div>
     );
 }
 

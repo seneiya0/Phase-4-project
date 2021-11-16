@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-    before_action :authorize, only: [:create, :destroy, :increment_likes, :update]
+    # before_action :authorize, only: [:create, :destroy, :increment_likes, :update]
 
     def index
         render json: Post.all
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
         post.update(likes: post.likes + 1)
         render json: post, status: :accepted
     end
-  
+
     private
 
     def post_params

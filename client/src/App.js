@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import NavBar from './NavBar';
 import PostContainer from './PostContainer';
+import "./App.css"
 
 function App() {
   const [searchTerm, setSearch] = useState("");
   const [posts, setPosts] = useState([]);
+
 
   useEffect(() => {
     fetch("/posts")
@@ -15,10 +17,10 @@ function App() {
   const filteredList = posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
     return (
-       <div>
+      <div>
         <NavBar setSearch= {setSearch} />
         <PostContainer posts={filteredList} />
-       </div>
+      </div>
     );
 }
 
