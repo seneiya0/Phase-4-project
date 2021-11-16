@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-    # before_action :authorize
+    before_action :authorize, only: [:create, :destroy, :increment_likes, :update]
 
     def index
         render json: Post.all

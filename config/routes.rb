@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :index, :show]
 
   patch "/posts/:id/like", to: "posts#increment_likes"
+  delete "/logout", to: "sessions#destroy"
+  post "/login", to: "sessions#create"
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end

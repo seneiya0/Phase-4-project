@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import NavBar from './NavBar';
+import PostContainer from './PostContainer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [searchTerm, setSearch] = useState("");
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("/posts")
+      .then((r) => r.json())
+      .then((posts)=> setPosts(posts));
+  }, []);
+
+  const filteredList = posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
+
+    return (
+       <div>
+        <NavBar setSearch= {setSearch} />
+        <PostContainer posts={filteredList} />
+       </div>
+    );
 }
 
 export default App;
