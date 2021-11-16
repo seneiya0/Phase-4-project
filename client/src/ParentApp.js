@@ -10,13 +10,13 @@ function ParentApp() {
     return (
       <div>
         <Switch>
-        <Route exact path="/signup" onChange={setShowSearch(false)}>
+        <Route exact path="/signup" onChange={()=> setShowSearch(false)}>
           <Signup />
         </Route>
-        <Route exact path="/login" onChange={setShowSearch(false)}>
+        <Route exact path="/login" onChange={()=> setShowSearch(false)}>
           <Login />
         </Route>
-        <Route exact path="/" onChange={setShowSearch(true)}>
+        <Route exact path="/" onChange={()=> setShowSearch(true)}>
           <App showSearch={showSearch} />
         </Route>
       </Switch>

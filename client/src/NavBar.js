@@ -25,7 +25,7 @@ function NavBar({showSearch, setSearch}) {
                 }}
             > Home </NavLink>
 
-            {showSearch ? null : <SearchBar setSearch={setSearch}/>}
+            {showSearch ? <SearchBar setSearch={setSearch}/> : null}
 
             <NavLink
                 to="/login"
