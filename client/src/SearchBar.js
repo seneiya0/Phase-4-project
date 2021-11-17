@@ -4,7 +4,8 @@ function SearchBar({setSearch}) {
     return (
         <div>
             <form>
-                <input
+                <input 
+                    className="searchbar"
                     onChange={(e) => setSearch(e.target.value)}
                     type="text"
                     placeholder="Filter by name..."

@@ -18,13 +18,13 @@ function handleLike(){
         .then(json => setLikes(json.likes))
 }
 
-const tags = post.tags.map((tag) => <span className="tags" key={tag.id}> #{tag.name} </span>)
+const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.name}</span>)
 
     return (
         <div className='post-card'>
             <h1>{post.title}</h1>
             <h3> {post.user.username} </h3>
-            <img style={{width: '200px'}} src={post.image}  />
+            <img style={{width: '225px'}} src={post.image}  />
             <p className='post-body'>{post.body}</p>
             <div>
                 {tags}

@@ -15,9 +15,9 @@ Post.create!(title: "story", body: "one day when i ate broccoli i also had some 
 
 PostTag.create!(tag_id: 1, post_id: 1)
 PostTag.create!(tag_id: 2, post_id: 1)
-PostTag.create!(tag_id: 3, post_id: 1)
+PostTag.create!(tag_id: 3, post_id: 4)
 PostTag.create!(tag_id: 1, post_id: 2)
 PostTag.create!(tag_id: 1, post_id: 3)
-PostTag.create!(tag_id: 2, post_id: 2)
+PostTag.create!(tag_id: 2, post_id: 5)
 PostTag.create!(tag_id: 3, post_id: 1)
 PostTag.create!(tag_id: 3, post_id: 3)

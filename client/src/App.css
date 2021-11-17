@@ -1,5 +1,5 @@
 .App{
-  display: block;
+display: block;
 }
 
 body {
@@ -18,25 +18,46 @@ body {
 }
 
 .posts {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height: auto;
-  float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    /* position: relative; */
+    /* width: 100%; */
+
 }
 
 .post-card{
   padding: 3%;
-  background-color: rgb(151, 151, 151);
-  margin: 20px;
-  width:  200px;
+  background-color: rgba(232, 210, 255, 0.192);
+  margin: 10px;
+  width:  200px; 
+  flex-direction: column;
+  flex-grow: 1;
 
 }
 
 .tags{
-  padding: 2%;
+  padding-right: 2%;
 }
 
+
+.searchbar{
+  margin-top: 13px;
+  border-radius: 15px;
+  padding: 5px;
+  border: transparent;
+  margin-left: 10x;
+  overflow: auto;
+}
+
+.buttons{
+  margin-left: auto;
+}
 
 
