@@ -3,29 +3,14 @@ import {useState, useEffect} from 'react'
 // import NavBar from './NavBar';
 
 
-function NewPost({unshow}){
+function NewPost({unshow, addNewPost}){
 
-  const [posts, setPosts] = useState([]);
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [currentUser, setCurrentUser] = useState("")
   const  [error, setError] = useState('')
 
-  
-  useEffect(() => {
-    fetch("/posts")
-      .then((r) => r.json())
-      .then((posts)=> setPosts(posts));
-  }, []);
-
-
-  function addNewPost(post){
-    setPosts([post,...posts])
-  }
-
-
   const [title, setTitle] = useState("");
-
 
   useEffect(() => {
     fetch('/me', {
@@ -39,7 +24,6 @@ function NewPost({unshow}){
         }
       })
   }, [])
-
 
   const newPost = {
     user_id: currentUser.id,
@@ -58,8 +42,6 @@ function NewPost({unshow}){
     body: JSON.stringify(newPost),
   };
 
-
-
   const handleSubmit = (e) => {
 
     e.preventDefault();
@@ -67,7 +49,7 @@ function NewPost({unshow}){
     .then(res => {
       if (res.ok) {
           res.json().then(post => {
-          {addNewPost(post)}
+          addNewPost(post);
           unshow();
           })
       } else {

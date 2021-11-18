@@ -46,7 +46,7 @@ body {
 
 .posts {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     /* flex-flow: row-reverse ; */
     /* justify-content: center; */
     justify-content: flex-start;

@@ -38,7 +38,7 @@ function ParentApp() {
       <div>
         <Switch>
         <Route exact path="/signup" onChange={()=> setShowSearch(false)}>
-          <Signup />
+          <Signup setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/login" onChange={()=> setShowSearch(false)}>
           <Login setCurrentUser={setCurrentUser} />
