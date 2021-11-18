@@ -8,7 +8,7 @@ display: block;
 }
 
 body {
-  background-color: rgba(132, 23, 211, 0.57);
+  background-color: rgba(55, 4, 104, 0.575);
 }
 
 .like-button{
@@ -46,18 +46,14 @@ body {
 
 .posts {
     display: flex;
-    flex-direction: row;
-    /* flex-flow: row-reverse ; */
-    /* justify-content: center; */
+    flex-direction: row-reverse;
     justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     position: absolute;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5%;
     margin-bottom: 5%;
-
-
 }
 
 .post-card{

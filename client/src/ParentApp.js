@@ -47,7 +47,7 @@ function ParentApp() {
           <MyProfile posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path="/new-post" onChange={()=> setShowSearch(false)}>
-          <NewPost addNewPost={addNewPost}/>
+          <NewPost currentUser={currentUser} setCurrentUser={setCurrentUser} addNewPost={addNewPost}/>
         </Route> 
         <Route exact path="/" onChange={()=> setShowSearch(true)}>
           <App posts={posts} setPosts={setPosts} currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />
