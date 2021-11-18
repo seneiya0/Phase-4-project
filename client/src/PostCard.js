@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import {FiTrash} from 'react-icons/fi'
 
 function PostCard({currentUser, post, deletePost}) {
 
     const[likes, setLikes] = useState(`${post.likes}`)
+    const[liked, setLiked] = useState(true)
 
 
 function handleLike(){
-    if (currentUser.username !== post.user.username){
+    setLiked(!liked)
+    if (liked){
+            if (currentUser.username !== post.user.username){
     fetch(`/posts/${post.id}/like`, {
         method: 'PATCH',
         body: JSON.stringify({
@@ -21,8 +25,32 @@ function handleLike(){
     }else{
         setLikes(post.likes)
         alert("you cant like your own post!")
-    }       
+        setLiked(true)  
+    } 
+
+    }else {
+            if (currentUser.username !== post.user.username){
+    fetch(`/posts/${post.id}/unlike`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+        completed: true
+        }),
+        headers: {
+        "Content-type": "application/json; charset=UTF-8"
+        }
+        })
+        .then(response => response.json())
+        .then(json => setLikes(json.likes))
+    }else{
+        setLikes(post.likes)
+        alert("you cant like your own post!")
+        setLiked(true)
+    }
+    }
+
 }
+
+
 
 function handleDelete(){
     deletePost(post.id)
@@ -49,14 +77,16 @@ const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.na
             </div>
             {currentUser && (
             <div className="likes">
-                <button className="like-button" onClick={handleLike}>❤</button> {likes}
+                <button className= { liked ?  "not-liked": "like-button" } onClick={handleLike}>❤</button> <p>{likes}</p>
                 {currentUser.username === post.user.username && (
-                    <button onClick={handleDelete}> delete </button>
+                    <button className="delete-button" onClick={handleDelete}> <FiTrash/> </button>
                 )}
             </div>
             )}
         </div>
     );
 }
+
+
 
 export default PostCard;

@@ -34,6 +34,12 @@ class PostsController < ApplicationController
         render json: post, status: :accepted
     end
 
+    def unlike
+        post = Post.find_by(id: params[:id])
+        post.update(likes: post.likes - 1)
+        render json: post, status: :accepted
+    end
+
     private
 
     
