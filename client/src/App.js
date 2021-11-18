@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import NavBar from './NavBar';
 import PostContainer from './PostContainer';
 import "./App.css"
 import NewPost from "./NewPost";
 
-function App({showSearch, setCurrentUser, currentUser, posts, setPosts}) {
+function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPost}) {
   const [searchTerm, setSearch] = useState("");
-
   const [showForm, setShowForm] = useState('false')
 
   function show(){
@@ -16,11 +15,6 @@ function App({showSearch, setCurrentUser, currentUser, posts, setPosts}) {
   function unshow(){
     setShowForm('false')
   }
-
-  const addNewPost = (newPostObj) => {
-    setPosts((all_posts) => [ ...all_posts,newPostObj]);
-  };
-
 
   const filteredList = posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
 

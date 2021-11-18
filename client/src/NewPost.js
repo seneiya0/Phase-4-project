@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react'
+import { useHistory } from 'react-router-dom'
+import NavBar from './NavBar';
 
-// import NavBar from './NavBar';
-
-
-function NewPost({unshow, addNewPost}){
+function NewPost({addNewPost}){
 
   const [image, setImage] = useState("");
+  const history = useHistory();
   const [body, setBody] = useState("");
   const [currentUser, setCurrentUser] = useState("")
   const  [error, setError] = useState('')
@@ -50,7 +50,7 @@ function NewPost({unshow, addNewPost}){
       if (res.ok) {
           res.json().then(post => {
           addNewPost(post);
-          unshow();
+          history.push("/")
           })
       } else {
           res.json().then(errors => {
@@ -60,10 +60,9 @@ function NewPost({unshow, addNewPost}){
       })
   };
 
-  console.log(error)
   return (
 <div>
-  {/* <NavBar /> */}
+    <NavBar currentUser={currentUser}/>
     <div className="post-thing">
       <h3 className="post-h">Create a new post:</h3>
       <div style={{color: "red"}}>{error}</div>

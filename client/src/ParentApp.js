@@ -5,13 +5,15 @@ import Login from "./Login";
 import App from "./App";
 import "./App.css"
 import MyProfile from "./MyProfile";
-
+import NewPost from "./NewPost";
 
 function ParentApp() {
     const [showSearch, setShowSearch] = useState(true)
     const [currentUser, setCurrentUser] = useState(null)
     const [posts, setPosts] = useState([]);
-  
+    const addNewPost = (newPostObj) => {
+      setPosts((all_posts) => [ ...all_posts,newPostObj]);
+    };
 
     useEffect(() => {
       fetch('/me', {
@@ -31,8 +33,6 @@ function ParentApp() {
         .then((r) => r.json())
         .then((posts)=> setPosts(posts));
     }, []);
-  
-
 
     return (
       <div>
@@ -43,11 +43,14 @@ function ParentApp() {
         <Route exact path="/login" onChange={()=> setShowSearch(false)}>
           <Login setCurrentUser={setCurrentUser} />
         </Route>
+        <Route exact path="/my-profile" >
+          <MyProfile posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        </Route>
+        <Route exact path="/new-post" onChange={()=> setShowSearch(false)}>
+          <NewPost addNewPost={addNewPost}/>
+        </Route> 
         <Route exact path="/" onChange={()=> setShowSearch(true)}>
           <App posts={posts} setPosts={setPosts} currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />
-        </Route>
-        <Route>
-          <MyProfile posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
       </Switch>
       </div>

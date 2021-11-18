@@ -22,16 +22,14 @@ const linkStyles = {
 
 function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show, unshow}) {
 
-
         function logout (){
         fetch("/logout", { method: "DELETE" }).then((r) => {
             if (r.ok) {
                 setCurrentUser(" ");
                 window.location.reload();
             }
-            })
+        })
     }
-
 
     return (
 
@@ -49,18 +47,17 @@ function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show, unshow}
                 <p>logged in as {currentUser.username}</p>
                 </div>
                 <a href="/my-profile "><img className="user-icon" src={currentUser.image} alt=" " ></img> </a>
-                {/* <NavLink
+                <NavLink
                 className="login-button"
-                to="/post"
+                to="/new-post"
                 exact
                 style={linkStyles}
-                > + post </NavLink> */}
-                <button style={linkStyles} onClick={show}> + post </button> 
+                > + post </NavLink>
                 <button className="logout-button" onClick={logout}> logout </button> 
             </div>
             )}
 
-            {currentUser === null && (
+        {currentUser === null && (
         <div className="buttons">
             <NavLink
                 className="login-button"
