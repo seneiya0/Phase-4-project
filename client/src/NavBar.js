@@ -20,7 +20,7 @@ const linkStyles = {
     };
 
 
-function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show}) {
+function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show, unshow}) {
 
 
         function logout (){
@@ -37,7 +37,8 @@ function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show}) {
 
         <div id="navbar">
             <NavLink to="/" exact> 
-            <a href="/"><img className="logo" src={logo} alt="logo"/></a>
+            <a href="/"><img onClick={() => unshow} className="logo" src={logo} alt="logo"/></a>
+
             </NavLink>
             
             {showSearch ? <SearchBar setSearch={setSearch}/> : null}               

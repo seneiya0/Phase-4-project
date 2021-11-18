@@ -4,19 +4,13 @@ import Signup from "./Signup";
 import Login from "./Login";
 import App from "./App";
 import "./App.css"
-
+import MyProfile from "./MyProfile";
 
 
 function ParentApp() {
     const [showSearch, setShowSearch] = useState(true)
     const [currentUser, setCurrentUser] = useState(null)
-    // const [posts, setPosts] = useState([]);
-
-    // useEffect(() => {
-    //   fetch("/posts")
-    //     .then((r) => r.json())
-    //     .then((posts)=> setPosts(posts));
-    // }, []);
+    const [posts, setPosts] = useState([]);
   
 
     useEffect(() => {
@@ -32,6 +26,12 @@ function ParentApp() {
         })
     }, [])
 
+    useEffect(() => {
+      fetch("/posts")
+        .then((r) => r.json())
+        .then((posts)=> setPosts(posts));
+    }, []);
+  
 
 
     return (
@@ -44,7 +44,10 @@ function ParentApp() {
           <Login setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/" onChange={()=> setShowSearch(true)}>
-          <App currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />
+          <App posts={posts} setPosts={setPosts} currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />
+        </Route>
+        <Route>
+          <MyProfile posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
       </Switch>
       </div>
