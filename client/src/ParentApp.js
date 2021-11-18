@@ -34,6 +34,11 @@ function ParentApp() {
         .then((posts)=> setPosts(posts));
     }, []);
 
+    function deletePost(id){
+      const updatedPosts = posts.filter((post) => post.id !== id )
+      setPosts(updatedPosts)
+    }
+
     return (
       <div>
         <Switch>
@@ -44,13 +49,13 @@ function ParentApp() {
           <Login setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/my-profile" >
-          <MyProfile posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+          <MyProfile deletePost={deletePost} posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path="/new-post" onChange={()=> setShowSearch(false)}>
           <NewPost currentUser={currentUser} setCurrentUser={setCurrentUser} addNewPost={addNewPost}/>
         </Route> 
         <Route exact path="/" onChange={()=> setShowSearch(true)}>
-          <App posts={posts} setPosts={setPosts} currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />
+          <App deletePost={deletePost} posts={posts} setPosts={setPosts} currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />
         </Route>
       </Switch>
       </div>

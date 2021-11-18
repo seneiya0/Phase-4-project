@@ -4,7 +4,7 @@ import PostContainer from './PostContainer';
 import "./App.css"
 import NewPost from "./NewPost";
 
-function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPost}) {
+function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPost, deletePost}) {
   const [searchTerm, setSearch] = useState("");
   const [showForm, setShowForm] = useState('false')
 
@@ -22,7 +22,7 @@ function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPo
       <div id="background">
         <NavBar setPosts = {setPosts} show={show} setCurrentUser={setCurrentUser} unshow={unshow} currentUser={currentUser} showSearch={showSearch} setSearch= {setSearch} />
         {showForm === 'false' && (
-        <PostContainer currentUser={currentUser} posts={filteredList} />
+        <PostContainer deletePost={deletePost} currentUser={currentUser} posts={filteredList} />
         )}
         {showForm === 'true' && (
           <NewPost posts={posts} addNewPost={addNewPost} unshow={unshow} />

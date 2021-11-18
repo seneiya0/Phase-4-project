@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function PostCard({currentUser, post}) {
+function PostCard({currentUser, post, deletePost}) {
 
     const[likes, setLikes] = useState(`${post.likes}`)
 
@@ -24,7 +24,15 @@ function handleLike(){
     }       
 }
 
+function handleDelete(){
+    deletePost(post.id)
+    fetch(`/posts/${post.id}`, {
+        method: 'DELETE'})
+        .then(response => response.json())
+        .then(json => console.log())
+}
 
+console.log(currentUser)
 
 const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.name}</span>)
 
@@ -42,6 +50,9 @@ const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.na
             {currentUser && (
             <div className="likes">
                 <button className="like-button" onClick={handleLike}>❤</button> {likes}
+                {currentUser.username === post.user.username && (
+                    <button onClick={handleDelete}> delete </button>
+                )}
             </div>
             )}
         </div>

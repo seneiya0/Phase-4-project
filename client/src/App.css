@@ -151,11 +151,12 @@ body {
   border: transparent ;
   border-radius: 15px;
   padding: 10px;
+
 }
 
 .post-button:enabled{
   background-color: rgb(251, 245, 255);
-  color: purple;
+  color: 30, 0, 71;
   cursor: pointer;
 }
 
