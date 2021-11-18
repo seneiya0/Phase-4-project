@@ -17,8 +17,13 @@ class UsersController < ApplicationController
 
   # Show a specific user as well as all of their posts
   def show
-    user = User.find_by(id: params[:id])
-    render json: user, serializer: UserDetailSerializer
+    if current_user
+      render json: current_user, serializer: UserDetailSerializer, status: :ok
+    else
+      render json: { error: 'No active session' }, status: :unauthorized
+    end
+    # user = User.find_by(id: params[:id])
+    # render json: user, 
   end
 
   private

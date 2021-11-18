@@ -1,6 +1,6 @@
 User.create!(username: "sam", password:"sam", image:"123");
 User.create!(username: "asdf", password:"hj4h", image:"qwe");
-User.create!(username: "efe", password:"asdf", image:"jfghj");
+User.create!(username: "efe", password:"asdf", image:"https://www.allkpop.com/upload/2021/11/content/040124/1636003493-07d78f47-ea5b-4e44-a26d-631b0f8e24ea-1.jpg");
 User.create!(username: "1234123", password:"s123", image:"zef");
 
 Tag.create!(name: "funny")

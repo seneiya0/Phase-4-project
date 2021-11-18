@@ -2,6 +2,11 @@
 display: block;
 }
 
+* {
+  font-family: 'Arimo', sans-serif;
+  letter-spacing: 1.5px;
+}
+
 body {
   background-color: rgba(132, 23, 211, 0.57);
 }
@@ -11,24 +16,47 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: 10ms;
+  font-size: 15pt;
+  margin: 0pt;
+  color: rgb(247, 0, 41);
 }
 
 .like-button:hover{
-  transform: scale(110%);
+
+  animation:  shake 0.8s  ;
+}
+
+@keyframes shake{
+  0%{ 
+    transform: scale(110%); 
+    transform: translateX(0)
+  }
+  25%{
+    transform: translateX(5px);
+  }
+    
+  50%{
+    transform: translateX(-5px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+
 }
 
 .posts {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row-reverse;
+    /* flex-flow: row-reverse ; */
+    /* justify-content: center; */
+    justify-content: flex-start;
     flex-wrap: wrap;
     position: absolute;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 4%;
+    margin-top: 5%;
     margin-bottom: 5%;
-    /* position: relative; */
-    /* width: 100%; */
+
 
 }
 
@@ -36,10 +64,9 @@ body {
   padding: 3%;
   background-color: rgba(232, 210, 255, 0.192);
   margin: 10px;
-  width:  200px; 
+  width:  fit-content; 
   flex-direction: column;
   flex-grow: 1;
-
 }
 
 .tags{
@@ -60,4 +87,130 @@ body {
   margin-left: auto;
 }
 
+.likes{
+  margin-top: 20px;
+  margin-bottom: 0pt;
+}
+
+.logout-button{
+  border-color: transparent;
+  padding: 10px;
+  height: fit-content;
+  background: white;
+  color: purple;
+  border-radius: 20px;
+  text-align: center;
+  position: static;
+}
+
+.logout-button:hover{
+  cursor: pointer;
+}
+
+.logged-in-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+  margin-left: auto;
+  margin-right: 1%;
+  justify-content: right;
+  margin-top: 0pt;
+}
+
+.greeting{
+  position: relative;
+  margin-right: 10px;
+  font-size: 15pt;
+}
+
+.post-thing{
+  position: absolute;
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  
+}
+
+.body-input {
+  border: 1px transparent;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 15px 12px;
+  outline: none;
+  height: 200px;
+  width: 500px;
+}
+
+.post-button{
+  width: fit-content;
+  margin-left: auto;
+  border: transparent ;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.post-button:enabled{
+  background-color: rgb(251, 245, 255);
+  color: purple;
+  cursor: pointer;
+}
+
+.counter{
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+}
+
+.authForm{
+  display: table;
+
+}
+
+.login-form{
+  background-color: rgba(214, 182, 255, 0.178);
+  width: 400px;
+  height: 400px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 30px;
+  left: 50%;
+  top:  50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.post-title{
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 3px;
+}
+
+.user-icon{
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+#user{
+  display: flex;
+  flex-direction: row;
+}
+
+.post-user-icon{
+  object-fit: cover;
+  width: 45px;
+  height:45px;
+  border-radius: 50%;
+  margin-right: 2%;
+}
 

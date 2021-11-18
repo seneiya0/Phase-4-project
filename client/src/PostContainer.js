@@ -1,10 +1,10 @@
 import React from 'react';
 import PostCard from './PostCard';
 
-function PostContainer({posts}) {
+function PostContainer({currentUser, posts}) {
     return (
         <div className="posts">
-            {posts.map((post) => (<PostCard key={post.id} post={post}/>))}
+            {posts.map((post) => (<PostCard key={post.id} currentUser={currentUser}post={post}/>))}
         </div>
     );
 }

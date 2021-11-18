@@ -36,6 +36,13 @@ class PostsController < ApplicationController
 
     private
 
+    
+
+    def current_user
+        User.find_by(username: params[:username])
+    end
+
+
     def post_params
         params.permit(:title, :image, :body, :likes, :user_id)
     end
