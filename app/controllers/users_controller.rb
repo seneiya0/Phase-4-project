@@ -23,8 +23,11 @@ class UsersController < ApplicationController
     else
       render json: { error: 'No active session' }, status: :unauthorized
     end
-    # user = User.find_by(id: params[:id])
-    # render json: user, 
+  end
+
+  def user_info
+    user = User.find_by(username: params[:username])
+    render json: user
   end
 
   private

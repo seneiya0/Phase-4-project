@@ -6,6 +6,7 @@ import App from "./App";
 import "./App.css"
 import MyProfile from "./MyProfile";
 import NewPost from "./NewPost";
+import UserPage from "./UserPage";
 
 function ParentApp() {
     const [showSearch, setShowSearch] = useState(true)
@@ -53,6 +54,9 @@ function ParentApp() {
         </Route>
         <Route exact path="/new-post" onChange={()=> setShowSearch(false)}>
           <NewPost currentUser={currentUser} setCurrentUser={setCurrentUser} addNewPost={addNewPost}/>
+        </Route> 
+        <Route exact path="/users/:username" onChange={()=> setShowSearch(false)}>
+          <UserPage posts={posts} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route> 
         <Route exact path="/" onChange={()=> setShowSearch(true)}>
           <App deletePost={deletePost} posts={posts} setPosts={setPosts} currentUser={currentUser} setCurrentUser={setCurrentUser} showSearch={showSearch} />

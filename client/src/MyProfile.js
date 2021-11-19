@@ -2,11 +2,9 @@ import NavBar from "./NavBar"
 import PostContainer from "./PostContainer"
 import {useState, useEffect} from 'react'
 
-function MyProfile({posts, show, unshow, showForm, deletePost}){
+function MyProfile({posts, show, unshow, showForm, deletePost, currentUser, setCurrentUser}){
 
-  const [currentUser, setCurrentUser] = useState(null)
-
-
+  console.log()
   useEffect(() => {
     fetch('/me', {
       credentials: 'include'
@@ -19,8 +17,6 @@ function MyProfile({posts, show, unshow, showForm, deletePost}){
         }
       })
   }, [])
-
-  console.log(currentUser)
 
   const filteredList = posts.filter((post) => post.user.username === currentUser.username)
 

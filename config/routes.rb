@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"
+  get "/users/:username", to: "users#user_info"
 
 
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
