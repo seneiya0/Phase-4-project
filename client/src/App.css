@@ -68,6 +68,11 @@ body {
     margin-bottom: 5%;
 }
 
+.post-count{
+  margin-left: 21%;
+  font-size: 22px;
+}
+
 .post-card{
   padding: 3%;
   background-color: rgba(232, 210, 255, 0.192);
@@ -254,4 +259,17 @@ body {
   100%{
     transform: translateX(0px);
   }
+}
+
+.created-at{
+  position: relative;
+  text-align: center;
+  font-weight: 850;
+}
+
+.post-date{
+  opacity: 65%;
+  font-weight: 700;
+  font-size: 15px;
+
 }

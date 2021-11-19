@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 function PostCard({currentUser, post, deletePost}) {
 
+    console.log()
+
     const[likes, setLikes] = useState(`${post.likes}`)
     const[liked, setLiked] = useState(true)
 
@@ -59,6 +61,8 @@ function handleDelete(){
 
 const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.name}</span>)
 
+const created_at = post.created_at.split('T')[0]
+
     return (
         <div className='post-card'>
             <h1 className="post-title" style={{width: '280px'}}>{post.title}</h1>
@@ -80,6 +84,7 @@ const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.na
             
             <img style={{width: '225px'}} src={post.image}  />
             <p className='post-body' style={{width: "280px"}}>{post.body}</p>
+            <p className="post-date">{created_at}</p>
             <div style={{color:"rgb(82, 21, 143)"}}>
                 {tags}
             </div>
