@@ -13,7 +13,6 @@ function UserPage({posts, show, unshow, showForm, deletePost, setCurrentUser, cu
     
     const createdAt = info ? info.split('T')[0] : null
 
-
   return(
     <div>
     <NavBar show={show} unshow={unshow} showForm={showForm} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
