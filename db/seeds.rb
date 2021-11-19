@@ -18,7 +18,7 @@ Post.create!(title: "I am a champion!", body: "Hooray! I just destroy everyone a
 Post.create!(title: "Like my joke please", body: "If a seagull lives at the sea, what lives at the bay? BAHAHA", likes: 68, image: "https://external-preview.redd.it/CTRRCaS9IkqgkqYgha0dNWj0NTheXHWevB7-w0IIlY0.jpg?auto=webp&s=266b8dd53d469f09efd04bcfad84e40dc0804768", user_id: 7)
 
 # Seneiya
-Post.create!(title: "React is the best", body: "I carried my partner to the finish line as I became one with React and became a coding Goddess.", likes: 11, image: "https://i.pinimg.com/originals/dd/71/1b/dd711be0cf3eae016715eb4189218a6c.gif", user_id: 9)
+Post.create!(title: "hit my peak rank!!!", body: "Finally got bronze!!!!", likes: 11, image: "https://preview.redd.it/m03xiyhb83271.png?width=1280&format=png&auto=webp&s=d3e96ccc690ec852292fea76a49dc840cead87f6", user_id: 9)
 
 # Eric & Henri
 Post.create!(title: "Meric called me fat", body: "Today is the 5th day where I have not eaten yet and Meric is calling me a fat chump... I am in need of food and emotional support. Someone save me", likes: 11, image: "", user_id: 8)
