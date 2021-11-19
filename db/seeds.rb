@@ -28,5 +28,5 @@ Post.create!(title: "adf", body: "itsasdfasdfsdasdsads", likes: 10, image: "http
 Post.create!(title: "story", body: "one day when i ate broccoli i also had some apple juice fghdsg fdgshfgds gfdshgfhasfds gfhdsgg dsgdsh fdsgghjhhds gfdbhfg dsfhdsg hgfdshjg dfggdsh ghjds.", likes: 10, image: "https://static.onecms.io/wp-content/uploads/sites/20/2021/04/21/dog-nose.jpg", user_id: 7)
 
 25.times do
-    PostTag.create!(tag_id: rand(1..9), post_id: 1)
+    PostTag.create!(tag_id: rand(1..9), post_id: rand(1..5))
 end
