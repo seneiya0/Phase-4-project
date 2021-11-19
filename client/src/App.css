@@ -64,18 +64,20 @@ body {
     position: absolute;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 5%;
+    margin-top: 6%;
     margin-bottom: 5%;
+    z-index: 1;
 }
 
 .post-count{
-  margin-left: 21%;
   font-size: 22px;
+  margin-bottom: -4%;
+  text-align: center;
 }
 
 .post-card{
   padding: 3%;
-  background-color: rgba(232, 210, 255, 0.192);
+  background-color: rgba(224, 195, 255, 0.466);
   margin: 10px;
   width:  fit-content; 
   flex-direction: column;
@@ -272,5 +274,4 @@ body {
   opacity: 65%;
   font-weight: 700;
   font-size: 15px;
-
 }

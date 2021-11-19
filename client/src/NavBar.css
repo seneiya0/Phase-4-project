@@ -6,11 +6,11 @@
 #navbar{
     display: flex;
     flex-direction: row;
-    width: 99%;
+    width: 98.5%;
     float: left;
     padding: 10px 15px 5px 5px;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     margin-top: -10px;
     background-color: rgba(139, 110, 167);
     border-bottom: .5px solid rgb(105, 84, 126);
