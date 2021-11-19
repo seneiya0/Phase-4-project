@@ -84,6 +84,7 @@ body {
 
 .tags{
   padding-right: 2%;
+  overflow-wrap: break-word;
 }
 
 
