@@ -91,7 +91,10 @@ const created_at = post.created_at.split('T')[0]
             {currentUser && (
             <div className="likes">
                 <button className= { liked ?  "not-liked": "like-button" } onClick={handleLike}>❤</button> <p>{likes}</p>
-                {currentUser.username === post.user.username || 'me' && (
+                {currentUser.username === post.user.username && (
+                    <button className="delete-button" onClick={handleDelete}> <FiTrash/> </button>
+                )}
+                {currentUser.username === "me" && (
                     <button className="delete-button" onClick={handleDelete}> <FiTrash/> </button>
                 )}
             </div>
