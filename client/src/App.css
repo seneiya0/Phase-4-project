@@ -188,7 +188,8 @@ body {
 .login-form{
   background-color: rgba(214, 182, 255, 0.178);
   width: 400px;
-  height: 400px;
+  height: fit-content;
+  padding-bottom: 10px;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
