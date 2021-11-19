@@ -6,7 +6,7 @@
 #navbar{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 99%;
     float: left;
     padding: 10px 15px 5px 5px;
     position: fixed;

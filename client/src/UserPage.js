@@ -5,7 +5,8 @@ function UserPage({posts, show, unshow, showForm, deletePost, setCurrentUser, cu
 
     const currentPosts = window.location.pathname.split('/')[2];
     const filteredList = posts.filter((post) => post.user.username === currentPosts)
-    const userImage = filteredList.map((user) => user.user.image)[0]
+    const userImage = filteredList.map((user) => user.user.image)[0];
+    const numberOfPosts= posts.length;
 
   return(
     <div>
