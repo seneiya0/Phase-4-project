@@ -7,7 +7,7 @@ function PostContainer({currentUser, posts, deletePost}) {
 
     return (
         <>
-        {window.location.pathname === "/" ? null : <p className="post-count"> <strong> {numberOfPosts} posts </strong> </p> }
+        {window.location.pathname === "/" ? null : <p className="post-count"> <strong> {numberOfPosts} { numberOfPosts === 1 ?  <> post</> : <>posts</> } </strong> </p> }
             <div className="posts">                
                 {posts.map((post) => (<PostCard deletePost={deletePost} key={post.id} currentUser={currentUser}post={post}/>))}
             </div>

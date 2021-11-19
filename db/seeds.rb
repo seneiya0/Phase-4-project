@@ -3,7 +3,7 @@ User.create!(username: "dagoons", password:"asdf", image:"https://i.imgur.com/lI
 User.create!(username: "barley", password:"asdf", image:"https://www.grxstatic.com/4f3rgqwzdznj/2c1XvjFLwNB5xV9mx1sM8E/704240b41060fdf75603b77ffa08284d/Michigan.png?format=png&auto=webp&width=704");
 User.create!(username: "mooster", password:"asdf", image:"https://media.discordapp.net/attachments/888526415228731416/911108055045898290/IMG_1872.png?width=318&height=566");
 User.create!(username: "duangFanboy", password:"asdf", image:"https://i.pinimg.com/originals/17/c0/c3/17c0c3f023d615fe03556b5a4288b04f.jpg");
-User.create!(username: "alanCinsavich", password:"123", image:"../src/assets/T02MD9XTF-U020EM6FP3K-afe8eabf18aa-512.jpg");
+User.create!(username: "alanCinsavich", password:"123", image:"https://ca.slack-edge.com/T02MD9XTF-U020EM6FP3K-afe8eabf18aa-512");
 User.create!(username: "clanAinsavich", password:"123", image:"https://cdn.discordapp.com/attachments/888526415228731416/910351885909757962/ALC.png");
 User.create!(username: "Henri", password:"123", image:"https://i.ytimg.com/vi/n7hQPaOWwdI/maxresdefault.jpg");
 User.create!(username: "Cozi", password:"123", image:"https://cdn.shopify.com/s/files/1/0541/1546/7434/collections/0f40ef12f686314fc36c32bf22a4f164_1270x1270.jpg?v=1628673146");
@@ -33,7 +33,7 @@ Post.create!(title: "woof", body: "woof woof woof woof bark bark woooooof", like
 Post.create!(title: "I love you twice <3", body: "I love twice!! Sana is my bias and I will never let anyone talk trash about her! Fighting ^-^", likes: 16, image: "https://c.tenor.com/PVxg9fE8paUAAAAM/sana-twice.gif", user_id: 5)
 
 # Alan
-Post.create!(title: "My internet is broken", body: "Hello this is a message from my iphone. I enjoy photography and had a blast working with everyone in Flat Iron! Love yall :)", likes: 68, image: "../src/assets/T02MD9XTF-U020EM6FP3K-afe8eabf18aa-512.jpg", user_id: 6)
+Post.create!(title: "My internet is broken", body: "Hello this is a message from my iphone. I enjoy photography and had a blast working with everyone in Flat Iron! Love yall :)", likes: 68, image: "https://ca.slack-edge.com/T02MD9XTF-U020EM6FP3K-afe8eabf18aa-512", user_id: 6)
 
 # Seneiya
 Post.create!(title: "React is the best", body: "I carried my partner to the finish line as I became one with React and became a coding Goddess.", likes: 11, image: "https://i.pinimg.com/originals/dd/71/1b/dd711be0cf3eae016715eb4189218a6c.gif", user_id: 9)
