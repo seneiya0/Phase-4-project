@@ -10,7 +10,9 @@ display: block;
 body {
   background-color: rgba(55, 4, 104, 0.575);
 }
-
+.post-card p{
+  overflow-wrap: break-word;
+}
 .like-button{
   border-color: transparent;
   background-color: transparent;

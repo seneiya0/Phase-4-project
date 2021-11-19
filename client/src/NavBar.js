@@ -2,7 +2,6 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import { NavLink } from "react-router-dom";
 import logo from "./assets/white.png";
-
 import './NavBar.css';
 
 const linkStyles = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {FiTrash} from 'react-icons/fi'
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function PostCard({currentUser, post, deletePost}) {
 
@@ -80,7 +80,7 @@ const tags = post.tags.map((tag) => <span className="tags" key={tag.id}>#{tag.na
             
             <img style={{width: '225px'}} src={post.image}  />
             <p className='post-body' style={{width: "280px"}}>{post.body}</p>
-            <div>
+            <div style={{color:"rgb(82, 21, 143)"}}>
                 {tags}
             </div>
             {currentUser && (

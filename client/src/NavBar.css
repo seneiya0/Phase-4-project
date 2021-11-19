@@ -8,5 +8,32 @@
     flex-direction: row;
     width: 100%;
     float: left;
-    padding: 5px;
+    padding: 10px 15px 5px 5px;
+    position: fixed;
+    z-index: 1;
+    margin-top: -10px;
+    background-color: rgba(139, 110, 167);
+    border-bottom: .5px solid rgb(105, 84, 126);
 }
+
+.image {
+    border-radius: 25px;
+      -webkit-animation:spin .7s linear 1;
+  }
+  @-webkit-keyframes spin {
+      0% {
+          -webkit-transform: rotate(0deg);
+      }
+      25% {
+          -webkit-transform: rotate(10deg);
+      }
+      50% {
+          -webkit-transform: rotate(0deg);
+      }
+      75% {
+          -webkit-transform: rotate(-10deg);
+      }
+      100% {
+          -webkit-transform: rotate(0deg);
+      }    
+  }

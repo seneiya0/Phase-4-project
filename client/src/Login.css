@@ -1,0 +1,11 @@
+#background-video {
+    width: 100%;
+    height: 97.5vh;
+    z-index: -1;
+    opacity: 0.15;
+    object-fit: cover;
+}
+
+.authForm {
+    opacity: 1;
+}

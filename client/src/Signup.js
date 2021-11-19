@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
+import background from '../src/assets/login.mp4'
+import './Login.css';
 
 function Signup({ setCurrentUser }) {
   const history = useHistory()
@@ -35,12 +37,21 @@ function Signup({ setCurrentUser }) {
       })
   }
   return (
+    <>
+        <video
+        src={background}
+        loop
+        muted
+        id="background-video"
+        autoPlay={true}
+      />
     <div className="authForm">
       <form onSubmit={handleSubmit} className="login-form">
         <h1>Sign Up</h1>
         <p>
           <label 
             htmlFor="username"
+            style={{marginRight:"5px"}}
           >
             Username
           </label>
@@ -54,6 +65,7 @@ function Signup({ setCurrentUser }) {
         <p>
           <label 
             htmlFor="password"
+            style={{marginRight:"5px"}}
           >
             Password
           </label>
@@ -67,6 +79,7 @@ function Signup({ setCurrentUser }) {
         <p>
           <label 
             htmlFor="image"
+            style={{marginRight:"35px"}}
           >
             Image
           </label>
@@ -84,6 +97,7 @@ function Signup({ setCurrentUser }) {
         <button href="/login" className="post-button"><Link to="/login">Log In</Link></button>
       </form>
     </div>
+    </>
   )
 }
 

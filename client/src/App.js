@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import PostContainer from './PostContainer';
 import "./App.css"
 import NewPost from "./NewPost";
+import background from './assets/login.mp4';
 
 function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPost, deletePost}) {
   const [searchTerm, setSearch] = useState("");

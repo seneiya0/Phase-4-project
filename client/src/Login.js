@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import background from '../src/assets/login.mp4'
+import './Login.css';
 
 function Login({ setCurrentUser }) {
 
@@ -32,16 +34,24 @@ function Login({ setCurrentUser }) {
         })
     }
 
-
     return (
+      <>
+        <video
+        src={background}
+        loop
+        muted
+        id="background-video"
+        autoPlay={true}
+      />
         <div className="authForm">
 
             <form onSubmit={handleSubmit} className="login-form">
-                <h1>Log In</h1>
+                <h1 style={{marginBottom:"40px", marginTop:"45px"}}>Log In</h1>
                 <div style={{color: "red"}}>{error}</div>
             <p>
             <label 
             htmlFor="username"
+            style={{marginRight:"5px"}}
             >
             Username
             </label>
@@ -50,11 +60,13 @@ function Login({ setCurrentUser }) {
                 name="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+
             />
         </p>
         <p>
             <label 
             htmlFor="password"
+            style={{marginRight:"5px"}}
             >
             Password
             </label>
@@ -63,15 +75,17 @@ function Login({ setCurrentUser }) {
             name=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            style={{marginBottom:"8px"}}
             />
         </p>
         <p><button className="post-button" type="submit" >Log In</button></p>
 
-        <p> Don't have an account ? </p>
+        <p style={{marginTop:"70px"}}> Don't have an account ? </p>
         <button href="/signup" className="post-button"><Link to="/signup">Sign Up</Link></button>
         </form>
 
     </div>
+    </>
     )
 }
 
