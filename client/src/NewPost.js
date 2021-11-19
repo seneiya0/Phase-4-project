@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useHistory } from 'react-router-dom'
 import NavBar from './NavBar';
+import background from '../src/assets/login.mp4'
 
 function NewPost({addNewPost}){
 
@@ -63,6 +64,13 @@ function NewPost({addNewPost}){
   return (
 <div>
     <NavBar currentUser={currentUser}/>
+        <video
+        src={background}
+        loop
+        muted
+        id="background-video"
+        autoPlay={true}
+      />
     <div className="post-thing">
       <h3 className="post-h">Create a new post:</h3>
       <div style={{color: "red"}}>{error}</div>

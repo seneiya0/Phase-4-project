@@ -20,6 +20,8 @@ function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPo
   const filteredList = posts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
 
     return (
+      <>
+
       <div id="background">
         <NavBar setPosts = {setPosts} show={show} setCurrentUser={setCurrentUser} unshow={unshow} currentUser={currentUser} showSearch={showSearch} setSearch= {setSearch} />
         {showForm === 'false' && (
@@ -29,6 +31,14 @@ function App({showSearch, setCurrentUser, currentUser, posts, setPosts, addNewPo
           <NewPost posts={posts} addNewPost={addNewPost} unshow={unshow} />
         )}
       </div>
+              <video
+        src={background}
+        loop
+        muted
+        id="background-video"
+        autoPlay={true}
+        />
+      </>
     );
 }
 

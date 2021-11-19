@@ -31,7 +31,7 @@ function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show, unshow}
     }
 
     return (
-
+<header>
         <div id="navbar">
             <NavLink to="/" exact> 
             <a href="/"><img onClick={() => unshow} className="logo" src={logo} alt="logo"/></a>
@@ -80,6 +80,8 @@ function NavBar({setCurrentUser,currentUser, showSearch, setSearch,show, unshow}
             > Signup </NavLink> 
             </div>)}
         </div>
+    </header>
+
     );
 }
 
